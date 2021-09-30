@@ -93,12 +93,8 @@ group :test do
   gem "webdrivers", "~> 4.6.0"
 end
 
-group :development do
-  gem "capistrano", "~> 3.16.0", require: false
-  gem "capistrano-bundler", "~> 2.0", require: false
-  gem "capistrano-rails", "~> 1.6.1", require: false
-  gem "capistrano3-delayed-job", "~> 1.7.6"
-  gem "capistrano3-puma", "~> 5.0.4"
+group :production do
+
   gem "erb_lint", "~> 0.0.37", require: false
   gem "github_changelog_generator", "~> 1.15.2"
   gem "mdl", "~> 0.11.0", require: false
@@ -113,7 +109,11 @@ group :development do
   gem "rubocop-rspec", "~> 2.4.0", require: false
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
   gem "scss_lint", "~> 0.59.0", require: false
+  end
   gem "web-console", "~> 3.7.0"
-end
+gem 'capistrano', '~> 3.11'
+gem 'capistrano-rails', '~> 1.4'
+gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 
 eval_gemfile "./Gemfile_custom"
